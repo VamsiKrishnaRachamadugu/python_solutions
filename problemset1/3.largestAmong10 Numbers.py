@@ -2,11 +2,18 @@
 If no odd number was entered, it should print a message to that effect."""
 
 li1 = input('Enter 10 numbers with space').split()
-maxi = li1[0]
-if len(li1) != 0:
-    for i in li1:
-        if i > maxi and i%2!=0:
-            maxi = i
-    print('Max ODD value:', maxi)
+odd_list = []
+if len(li1)==0:
+    print('Enter some values')
 else:
-    print('None of the are odd values')
+    for i in li1:
+        if int(i) % 2 != 0:
+            odd_list.append(int(i))
+    maxi = odd_list[0]
+    if len(odd_list) != 0:
+        for i in odd_list:
+            if i > maxi:
+                maxi = i
+        print('Max ODD value:', maxi)
+    else:
+        print('None of the are odd values')
