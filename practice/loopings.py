@@ -47,8 +47,12 @@
 # print('You have reached limit')
 
 """continue"""
-for i in range(1, 10):
-    if i == 3:
-        continue
-    print(i)
-print('You have reached limit')
+# for i in range(1, 10):
+#     if i == 3:
+#         continue
+#     print(i)
+# print('You have reached limit')
+
+# string='vamsi'
+# # reverse_string=''+(reversed(string))
+# print((reversed(string)))
