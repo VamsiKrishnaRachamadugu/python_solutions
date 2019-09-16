@@ -1,10 +1,10 @@
 def is_anagaram(str1, str2):
     if len(str1) == len(str2):
-        s1_list = []
-        s2_list = []
-        for i in range(len(str1)):
-            s1_list.append(str1[i])
-            s2_list.append(str2[i])
+        s1_list = list(str1)
+        s2_list = list(str2)
+        # for i in range(len(str1)):
+        #     s1_list.append(str1[i])
+        #     s2_list.append(str2[i])
         s1_list.sort()
         s2_list.sort()
         count = 0
@@ -21,4 +21,4 @@ def is_anagaram(str1, str2):
         print(str1, str2, '  are not anagrams')
 
 
-is_anagaram('dad', 'aad')
+is_anagaram('dad', 'add')

@@ -6,6 +6,8 @@ Hakka looked around. They were on the other side of the Tungabhadra. It was a ro
 “That’s the quality of this land,” said a quiet voice, “Even rabbits give fight.”
 Startled to hear a stranger speak, the two brothers turned.
 They saw a holy man walking towards them. He was a picture of peace. At the same time, his eyes were blazing bright."""
+ip_string = ip_string.replace('.', '')
+ip_string = ip_string.replace(',', '')
 length = len(ip_string)
 words = 0
 occurance_dict = {}
