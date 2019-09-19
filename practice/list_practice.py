@@ -1,6 +1,10 @@
 """list functions """
-# a=[1,2,3]
-# b=[4,5,6]
+a=[1,2,3]
+b=[4,5,6]
+c=a.copy()
+c.append('v')
+print(a)
+print(c)
 # a.extend(b)
 # a=a+b
 # print(a)
@@ -23,12 +27,12 @@ li = [1, 'q', 'w', '1', 1, 's']
 #     else:
 #         count_of_char += 1
 # print(count_of_digits, count_of_char)
-for i in li:
-     if ord(str(i))>=65 and ord(str(i))<=90:
-        count_of_char += 1
-     else:
-        count_of_digits += 1
-print(count_of_digits, count_of_char)
+# for i in li:
+#      if ord(str(i))>=65 and ord(str(i))<=90:
+#         count_of_char += 1
+#      else:
+#         count_of_digits += 1
+# print(count_of_digits, count_of_char)
 
 " eliminate duplicates  and printing each character 2 times "
 # str1 = input('Enter your string:')
