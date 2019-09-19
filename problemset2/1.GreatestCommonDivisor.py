@@ -13,6 +13,6 @@ def greatestCommon(a, b):
         return greatestCommon(b, a % b)
 
 
-num1 = input('Enter 1st value')
-num2 = input('Enter 2nd value')
+num1 = int(input('Enter 1st value'))
+num2 = int(input('Enter 2nd value'))
 print(greatestCommon(num1, num2))

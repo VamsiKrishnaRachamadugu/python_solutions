@@ -12,4 +12,4 @@ def is_power(num1, num2):
             return 'false'
 
 
-print(is_power(32, 2))
+print(is_power(30, 2))

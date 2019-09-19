@@ -10,12 +10,12 @@ eval('type(math.pi)')
 
 def eval_loop():
     li = []
-    result = 'false'
-    while result == 'false':
+    result = True
+    while result:
         string = input('Enter expression')
         if string == 'done':
             print(li)
-            result = 'true'
+            result = False
             break
         else:
             li.append(eval(string))
