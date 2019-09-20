@@ -19,7 +19,7 @@ else:
 
 file1_text=open('file1.txt','r')
 file_read=file1_text.readlines()
-length=len(file1_text)
+length=len(file1_read)
 print('New lines',length)
 
 
