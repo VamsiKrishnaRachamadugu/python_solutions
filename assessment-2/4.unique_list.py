@@ -2,8 +2,8 @@
 Sample List : [1,2,3,3,3,3,4,5]
 Unique List : [1, 2, 3, 4, 5]
 """
-sample_list=input('Enter some elements by adding space').split(' ')
-unique_list=[]
+sample_list = input('Enter some elements by adding space').split(' ')
+unique_list = []
 for i in sample_list:
     if i not in unique_list:
         unique_list.append(i)

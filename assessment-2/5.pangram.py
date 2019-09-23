@@ -1,3 +1,9 @@
+""""5.Write a Python function to check whether a string is a pangram or not.
+Note : Pangrams are words or sentences containing every letter of the alphabet at least once.
+For example : "The quick brown fox jumps over the lazy dog"
+"""
+
+
 def is_pangram(pangram_string):
     char_ascii_values = []
 
@@ -11,9 +17,9 @@ def is_pangram(pangram_string):
         return True
 
 
-pangram_string = input('Enter a string to check whether it is pangram or not: ')
-if is_pangram(pangram_string ):
-    print(pangram_string, ' is a pangram')
-else:
-    print(pangram_string, ' is not a pangram')
-
+if __name__ == '__main__':
+    pangram_string = input('Enter a string to check whether it is pangram or not: ')
+    if is_pangram(pangram_string):
+        print(pangram_string, ' is a pangram')
+    else:
+        print(pangram_string, ' is not a pangram')
