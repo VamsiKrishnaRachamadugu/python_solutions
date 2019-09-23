@@ -29,10 +29,13 @@ from functools import reduce
 # reduce_result = reduce(lambda a, b: int(a) * int(b), li)
 # print(reduce_result)
 
-ip_string = '11664331'
-map_list = list(map(lambda x: x * 2, ip_string))
-reduce_result = reduce(lambda a, b: a + b, map_list)
-print(reduce_result)
+# ip_string = '11664331'
+# map_list = list(map(lambda x: x * 2, ip_string))
+# reduce_result = reduce(lambda a, b: a + b, map_list)
+# print(reduce_result)
 
 # map_list = ''.join(map(lambda x: x * 2, ip_string))
 # print(map_list)
+
+
+
