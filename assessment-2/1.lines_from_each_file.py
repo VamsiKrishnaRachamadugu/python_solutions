@@ -15,3 +15,6 @@ if len(data1) > len(data2):
 else:
     for line in range(len(result), len(data2)):
         new_file.write(data2[line])
+file1_text.close()
+file2_text.close()
+new_file.close()
