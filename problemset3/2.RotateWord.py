@@ -9,10 +9,22 @@ which converts numeric codes to characters.
 
 def rotate_word(string, number):
     final_string = ''
+
     for i in string:
-        num = ord(i)
-        trans_string = num + number
-        final_string += chr(trans_string)
+        ascii_num = ord(i)
+        trans_string = ascii_num + number
+        if trans_string < 97:
+            already_sub = ascii_num - 97
+            num1 = number + already_sub
+            final_num = 123 + num1
+            final_string += chr(final_num)
+        elif trans_string > 122:
+            already_sub = 122 - ascii_num
+            num1 = number - already_sub
+            final_num = 96 + num1
+            final_string += chr(final_num)
+        else:
+            final_string += chr(trans_string)
     return final_string
 
 
