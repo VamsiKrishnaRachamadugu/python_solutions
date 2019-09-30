@@ -47,6 +47,8 @@
 # print('You have reached limit')
 
 """continue"""
+
+
 # for i in range(1, 10):
 #     if i == 3:
 #         continue
@@ -56,3 +58,19 @@
 # string='vamsi'
 # # reverse_string=''+(reversed(string))
 # print((reversed(string)))
+
+
+def triangle(n):
+    k = 0
+    for stars in range(n, 0, -1):
+        for spaces in range(k):
+            print(' ', end='')
+        k = k + 1
+        for star_count in range(stars):
+            print('*', end='')
+        for star_count in range(stars - 1):
+            print('*', end='')
+        print()
+
+
+triangle(5)
