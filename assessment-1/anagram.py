@@ -1,7 +1,7 @@
 def is_anagaram(str1, str2):
     if len(str1) == len(str2):
-        s1_list = list(str1)
-        s2_list = list(str2)
+        s1_list = list(str1.lower())
+        s2_list = list(str2.lower())
         # for i in range(len(str1)):
         #     s1_list.append(str1[i])
         #     s2_list.append(str2[i])
@@ -14,11 +14,11 @@ def is_anagaram(str1, str2):
             else:
                 break
         if len(s1_list) == count:
-            print(str1, str2, ' are anagrams')
+            return True
         else:
-            print(str1, str2, ' are not anagrams')
+            return False
     else:
-        print(str1, str2, '  are not anagrams')
+        return False
 
 
-is_anagaram('dad', 'add')
+is_anagaram('Dad', 'Add')
