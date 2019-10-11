@@ -1,0 +1,187 @@
+1.Create user defined exceptino for capturing image files which is .jpg, .jpeg, .png etc.,
+
+ 
+
+Example:
+
+Please enter file name: png_file_details.pdf
+
+
+
+
+class Images_Not_Supported_Exception(Exception):
+  def __init__(self):
+    print('Images are not supported')
+
+
+def file_format(file_name):
+  file_list=file_name.split('.')
+  unsupported_list=['jpg','jpeg','png']
+  if len(file_list)==2:
+    file_type=file_list[1]
+    if file_type in unsupported_list:
+      raise Images_Not_Supported_Exception
+    else:
+      return 'Valid format file'
+  else:
+    return 'Invalid file format passed'
+
+filename=input('Enter a file name: ')
+try:
+  print(file_format(filename))
+except Images_Not_Supported_Exception as ie:
+  print(ie)
+
+
+
+
+2.Create simple banking process using class and function
+
+Example class/functions:
+
+new_user
+
+offer
+
+debit_card_issue., etc
+
+
+
+
+class Bank:
+  new_user_offer=500
+  def __init__(self,name,age,balance):
+    self.name=name
+    self.age=age
+    self.balance=balance+self.new_user_offer
+  def user_balance(self):
+    print(self.name,' balance is ',self.balance)
+  
+b1=Bank('vamsi',22,1000)
+b1.user_balance()
+
+
+
+3.Create student information file (xlsx format) from database.
+
+the table should contain 10 columns minimum
+
+ 
+
+get the list of student's identiy number input from the text file (.txt)
+
+
+
+
+import mysql
+
+def extract_data_from_db(e_id):
+    try:
+        conn = mysql.connector.connect(host='localhost', user='root', password='root', database='db_name')
+        my_cursor = conn.cursor()
+        query="select * from employee where %s"
+        my_cursor.execute(query,e_id)
+        result=my_cursor.fetchall()
+        return result
+    except mysql.Error as e:
+        print e
+    finally:
+        my_cursor.close()
+        conn.close()
+
+with open('id_file.txt','r') as f_handler:
+  id_string=f_handler.read()
+  with open('result.xsl','w') as write_file:
+    for ids in id_string[0]:
+      write_file.write(extract_data_from_db(ids))
+    
+
+4.Read the IP Addresses from the file using regular expression
+
+
+import re
+pattern=r'[0-2]\d[0-5].[0-2]\d[0-5].[0-2]\d[0-5].[0-2]\d[0-5]'
+with open('ip_file.txt','r') as f_handler:
+  ip_list=f_handler.readlines()
+  for line in ip_list:
+    result=re.search(pattern,line)
+    if result:
+      print result.group()
+
+
+
+5.Convert number to words range will be 9999
+
+Example:
+
+1000 - one thousand
+
+1750 - one thousand seven hundred fifty
+
+4881 - four thousand eight hundred eighty on
+
+
+
+refer_dict = {0: 'zero', 1: 'one', 2: 'two', 3: 'three',
+              4: 'four', 5: 'five', 6: 'six',
+              7: 'seven', 8: 'eight', 9: 'nine'}
+second_dict = {11: 'eleven', 12: 'twelve', 13: 'thirteen',
+               14: 'fourteen', 15: 'fifteen', 16: 'sixteen',
+               17: 'seventeen', 18: 'eighteen', 19: 'ninteen'}
+third_dict = {2: 'twenty', 3: 'thirty', 4: 'forty', 5: 'fifty',
+              6: 'sixty', 7: 'seventy', 8: 'eighty', 9: 'ninety'}
+number = input('Enter a number: ')
+result_string = ''
+if len(number) == 4:
+    if int(number[0]) > 0:
+        result_string = refer_dict[int(number[0])] + ' thousand '
+    if int(number[1]) > 0:
+        result_string = result_string + refer_dict[int(number[1])] + ' hundred and '
+    if int(number[2]) == 1:
+        result_string = result_string + second_dict[int(number[2] + number[3])]
+    if int(number[2]) > 1:
+        result_string = result_string + third_dict[int(number[2])] + ' ' + refer_dict[int(number[3])]
+elif len(number) == 3:
+    if int(number[0]) > 0:
+        result_string = result_string + refer_dict[int(number[0])] + ' hundred and '
+    if int(number[1]) == 1:
+        result_string = result_string + second_dict[int(number[1] + number[2])]
+    if int(number[1]) > 1:
+        result_string = result_string + third_dict[int(number[1])] + ' ' + refer_dict[int(number[2])]
+elif len(number) == 2:
+    if int(number[0]) == 1:
+        result_string = result_string + second_dict[int(number[0] + number[1])]
+    if int(number[1]) > 1:
+        result_string = result_string + third_dict[int(number[0])] + ' ' + refer_dict[int(number[1])]
+elif len(number) == 1:
+    result_string = refer_dict[int(number)]
+print(result_string)
+
+
+ 
+
+6.Text Wrapping by given column range
+
+Example:
+
+ 
+
+Hi, this is sample text. -- (sample text)
+
+9 -- (column range)
+
+ 
+
+output:
+
+ 
+
+123456789
+
+Hi, this -- (right text padding can have spaces)
+
+is sample
+
+text. -- (no space is allowed in left text padding)
+
+
